@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class ScrollModeViewController: UIViewController {
+class ScrollModeViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet weak var bookCollection: UICollectionView!
     
@@ -20,14 +20,25 @@ class ScrollModeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupCollection()
     }
     
     private func setupCollection() {
-        let dataSource = RxCollectionViewSectionedReloadDataSource<BookSection>(configureCell: {[weak self] (dataSource, collctionView, indexPath, element) -> UICollectionViewCell in
-            return UICollectionViewCell()
+        let dataSource = RxCollectionViewSectionedReloadDataSource<BookSection>(configureCell: {(dataSource, collectionView, indexPath, element) -> UICollectionViewCell in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionCell", for: indexPath) as! BookCollectionCell
+            cell.setup(img: element.cover, name: element.name, size: element.size)
+            return cell
         })
+        
+        scrollModeViewModel.sections.bind(to: bookCollection.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        
+        bookCollection.rx.itemSelected.map{ indexPath in
+            return (indexPath: indexPath, item: dataSource[indexPath])
+            }.subscribe(onNext: { pair in
+                Log(message: pair)
+            }).disposed(by: disposeBag)
+        
+        bookCollection.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
 

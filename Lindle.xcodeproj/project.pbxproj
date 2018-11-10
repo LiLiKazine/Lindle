@@ -10,6 +10,8 @@
 		091773C52196B9240034B58C /* ScrollModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091773C42196B9240034B58C /* ScrollModeViewController.swift */; };
 		091773CB2196BB370034B58C /* BookSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091773CA2196BB370034B58C /* BookSection.swift */; };
 		091773CD2196BF020034B58C /* ScrollModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091773CC2196BF020034B58C /* ScrollModeViewModel.swift */; };
+		091773CF2196DADD0034B58C /* BookCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091773CE2196DADD0034B58C /* BookCollectionCell.swift */; };
+		091773D1219715780034B58C /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091773D0219715780034B58C /* Global.swift */; };
 		09B02E3C2196B0EC00C31CC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B02E3B2196B0EC00C31CC2 /* AppDelegate.swift */; };
 		09B02E3E2196B0EC00C31CC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B02E3D2196B0EC00C31CC2 /* MainViewController.swift */; };
 		09B02E412196B0EC00C31CC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09B02E3F2196B0EC00C31CC2 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		091773C42196B9240034B58C /* ScrollModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollModeViewController.swift; sourceTree = "<group>"; };
 		091773CA2196BB370034B58C /* BookSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSection.swift; sourceTree = "<group>"; };
 		091773CC2196BF020034B58C /* ScrollModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollModeViewModel.swift; sourceTree = "<group>"; };
+		091773CE2196DADD0034B58C /* BookCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionCell.swift; sourceTree = "<group>"; };
+		091773D0219715780034B58C /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		09B02E382196B0EC00C31CC2 /* Lindle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lindle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B02E3B2196B0EC00C31CC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09B02E3D2196B0EC00C31CC2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		091773C72196BAA20034B58C /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				091773CE2196DADD0034B58C /* BookCollectionCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 				09B02E422196B0EE00C31CC2 /* Assets.xcassets */,
 				09B02E442196B0EE00C31CC2 /* LaunchScreen.storyboard */,
 				09B02E472196B0EE00C31CC2 /* Info.plist */,
+				091773D0219715780034B58C /* Global.swift */,
 			);
 			path = Lindle;
 			sourceTree = "<group>";
@@ -269,11 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091773CF2196DADD0034B58C /* BookCollectionCell.swift in Sources */,
 				09B02E3E2196B0EC00C31CC2 /* MainViewController.swift in Sources */,
 				09B02E3C2196B0EC00C31CC2 /* AppDelegate.swift in Sources */,
 				091773CB2196BB370034B58C /* BookSection.swift in Sources */,
 				091773C52196B9240034B58C /* ScrollModeViewController.swift in Sources */,
 				091773CD2196BF020034B58C /* ScrollModeViewModel.swift in Sources */,
+				091773D1219715780034B58C /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

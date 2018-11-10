@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDc-HQ-7td" userLabel="Scroll Mode View">
-                                <rect key="frame" x="8" y="133.5" width="359" height="400"/>
+                                <rect key="frame" x="8" y="134" width="359" height="400"/>
                                 <connections>
                                     <segue destination="7GK-Zk-9Lk" kind="embed" id="NzC-xm-z44"/>
                                 </connections>
@@ -47,23 +47,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="359" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uz4-4v-1WI">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uz4-4v-1WI">
                                 <rect key="frame" x="0.0" y="0.0" width="359" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pwi-0u-fIG">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pwi-0u-fIG">
+                                    <size key="itemSize" width="301" height="394"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MJi-xk-ydS">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BookCollectionCell" reuseIdentifier="BookCollectionCell" id="MJi-xk-ydS" customClass="BookCollectionCell" customModule="Lindle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="3" width="301" height="394"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="301" height="394"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Itd-Ly-HIl" userLabel="Cover">
+                                                    <rect key="frame" x="15" y="16" width="271" height="256"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhW-wc-Nnd" userLabel="Size">
+                                                    <rect key="frame" x="134.5" y="309" width="32.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-oF-PXr" userLabel="Name">
+                                                    <rect key="frame" x="128" y="280" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="lhW-wc-Nnd" firstAttribute="top" secondItem="PdG-oF-PXr" secondAttribute="bottom" constant="8" id="3ru-Ex-Apw"/>
+                                            <constraint firstItem="PdG-oF-PXr" firstAttribute="centerX" secondItem="MJi-xk-ydS" secondAttribute="centerX" id="5Dt-8Y-6RQ"/>
+                                            <constraint firstItem="PdG-oF-PXr" firstAttribute="top" secondItem="Itd-Ly-HIl" secondAttribute="bottom" constant="8" id="Ipz-Z0-Fpw"/>
+                                            <constraint firstItem="Itd-Ly-HIl" firstAttribute="centerX" secondItem="MJi-xk-ydS" secondAttribute="centerX" id="MXY-Qa-lZQ"/>
+                                            <constraint firstItem="Itd-Ly-HIl" firstAttribute="top" secondItem="MJi-xk-ydS" secondAttribute="topMargin" constant="8" id="why-5Z-ziH"/>
+                                            <constraint firstItem="Itd-Ly-HIl" firstAttribute="height" secondItem="MJi-xk-ydS" secondAttribute="height" multiplier="0.65" id="wnK-Pe-KUk"/>
+                                            <constraint firstItem="lhW-wc-Nnd" firstAttribute="centerX" secondItem="MJi-xk-ydS" secondAttribute="centerX" id="xHO-VW-td5"/>
+                                            <constraint firstItem="Itd-Ly-HIl" firstAttribute="width" secondItem="MJi-xk-ydS" secondAttribute="width" multiplier="0.9" id="zQC-ir-hqu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cover" destination="Itd-Ly-HIl" id="4sr-Y6-ocS"/>
+                                            <outlet property="name" destination="PdG-oF-PXr" id="LdF-DH-I3J"/>
+                                            <outlet property="size" destination="lhW-wc-Nnd" id="OxJ-PX-tjP"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -82,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLi-Ch-8gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="26"/>
+            <point key="canvasLocation" x="1469.5999999999999" y="25.187406296851577"/>
         </scene>
     </scenes>
 </document>
